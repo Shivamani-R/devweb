@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NewsNexus - Your Daily News Hub</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+
+  <body>
+    <nav>
+      <div class="main-nav container flex">
+        <a href="#" class="company-logo">
+          <img src="/logo.png" alt="logo" />
+        </a>
+        <div class="nav-links">
+          <ul class="flex">
+            <button
+              class="hover-link nav-item"
+              id="cricket"
+              onClick="onNavItemClick('cricket')"
+              aria-label="Show cricket news"
+            >
+              <i class="fas fa-cricket"></i>
+              Cricket
+            </button>
+            <button
+              class="hover-link nav-item"
+              id="india"
+              onClick="onNavItemClick('india')"
+              aria-label="Show India news"
+            >
+              <i class="fas fa-flag"></i>
+              India
+            </button>
+            <button
+              class="hover-link nav-item"
+              id="technology"
+              onClick="onNavItemClick('technology')"
+              aria-label="Show technology news"
+            >
+              <i class="fas fa-microchip"></i>
+              Technology
+            </button>
+            <button
+              class="hover-link nav-item"
+              id="politics"
+              onClick="onNavItemClick('politics')"
+              aria-label="Show politics news"
+            >
+              <i class="fas fa-landmark"></i>
+              Politics
+            </button>
+          </ul>
+        </div>
+        <div class="search-bar flex">
+          <div class="search-container">
+            <input
+              type="text"
+              class="news-input"
+              id="search-text"
+              placeholder="e.g. Science"
+            />
+            <div class="search-suggestions" id="search-suggestions"></div>
+          </div>
+          <button class="search-button" id="search-button">
+            <i class="fas fa-search"></i>
+            Search
+          </button>
+        </div>
+        <button
+          id="dark-mode-toggle"
+          title="Toggle Dark Mode"
+          aria-label="Toggle Dark Mode"
+        >
+          🌙
+        </button>
+      </div>
+    </nav>
+
+    <main>
+      <div class="filters container flex">
+        <select id="source-filter">
+          <option value="">All Sources</option>
+          <!-- dynamically filled -->
+        </select>
+        <input type="date" id="date-filter" />
+        <button id="filter-apply">Apply Filters</button>
+      </div>
+
+      <div class="cards-container container flex" id="cardscontainer"></div>
+
+      <div class="load-more-container container flex">
+        <button id="load-more-btn">Load More</button>
+      </div>
+
+      <div id="loader" class="loader"></div>
+    </main>
+
+    <template id="template-news-card">
+      <div class="card" tabindex="0">
+        <div class="card-header">
+          <img src="https://via.placeholder.com/400x200" alt="" id="news-img" />
+        </div>
+        <div class="card-content">
+          <h3 id="news-title">This is the Title</h3>
+          <h6 class="news-source" id="news-source">constGenius 02/02/2024</h6>
+          <p class="news-desc" id="news-desc">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+          </p>
+        </div>
+      </div>
+    </template>
+  </body>
+</html>
